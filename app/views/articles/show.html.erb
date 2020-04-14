@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Individual Post</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+  <nav class="navbar navbar-light bg-light">
+    <button type="button" class="btn btn-link"><%= link_to("Wikinimous", articles_path)%></button>
+    <button type="button" class="btn btn-link"><%= link_to("Create New Post", new_article_path)%></button>
+  </nav>
+
+  <div class="d-flex flex-row mt-3">
+    <h2><%=@article.title%></h2>
+    <button type="button" class="btn btn-link"><%= link_to("Edit", edit_article_path(@article)) %></button>
+    <button type="button" class="btn btn-link"><%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }%></button>
+  </div>
+
+  <br>
+
+  <p><%=@article.content%></p>
+
+</body>
+</html>
